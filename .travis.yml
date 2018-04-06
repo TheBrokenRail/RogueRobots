@@ -1,8 +1,10 @@
+sudo: true
 install:
   - export LC_ALL=en_US.UTF-8
   - export LANG=en_US.UTF-8
   - gem install u3d
-  - u3d dependencies
-  - u3d install latest_stable --packages Unity,Linux,Mac,WebGL,Windows
+  - sudo u3d dependencies
+  - sudo u3d install latest_stable --packages Unity,Linux,Mac,WebGL,Windows
 script:
-  - echo WIP
+  - u3d -- -executeMethod Util.Build -quit -batchmode
+  - dir Build
