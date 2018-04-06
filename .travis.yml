@@ -2,7 +2,7 @@ sudo: true
 install:
   - export LC_ALL=en_US.UTF-8
   - export LANG=en_US.UTF-8
-  - gem install u3d
+  - sudo gem install u3d
   - sudo u3d dependencies
   - sudo u3d install latest_stable --packages Unity,Linux,Mac,WebGL,Windows
 script:
