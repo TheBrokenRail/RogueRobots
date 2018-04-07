@@ -1,4 +1,4 @@
-os: osx
+#os: osx
 sudo: true
 install:
   - export LC_ALL=en_US.UTF-8
