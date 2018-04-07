@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 
@@ -16,5 +16,6 @@ public class Util {
 		buildPlayerOptions.locationPathName = "Build/Linux/RogueRobots";
 		buildPlayerOptions.target = BuildTarget.StandaloneLinuxUniversal;
 		BuildPipeline.BuildPlayer(buildPlayerOptions);
+		EditorApplication.Exit
 	}
 }
