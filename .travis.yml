@@ -4,11 +4,8 @@ install:
   - export LC_ALL=en_US.UTF-8
   - export LANG=en_US.UTF-8
   - export U3D_PASSWORD=
-  - gem install u3d
-  - u3d dependencies
-  - u3d available -p
-  - u3d install 2017.3.1f1 --packages Unity,Linux,WebGL,Windows
+  - ./Scripts/Install.sh
   - travis_wait 30
 script:
-  - /Applications/Unity_2017.3.1f1/Unity.app/Contents/MacOS/Unity -nographics -silent-crashes -logFile /dev/stdout -projectpath /Users/travis/build/TheBrokenRail/RogueRobots -executeMethod Util.Build -quit -batchmode
+  - /Applications/Unity/Unity.app/Contents/MacOS/Unity -nographics -silent-crashes -logFile /dev/stdout -projectpath /Users/travis/build/TheBrokenRail/RogueRobots -executeMethod Util.Build -quit -batchmode
   - ls Build
