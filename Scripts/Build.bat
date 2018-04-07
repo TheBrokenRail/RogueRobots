@@ -16,6 +16,9 @@ echo Activating Unity
   -username %USERNAME% ^
   -password %PASSWORD% ^
   -quit
+echo Log:
+type Unity.log
+echo End Log
 
 echo Building %PROJECT% for Windows 32bit
 "C:\Program Files\Unity\Editor\Unity.exe" ^
@@ -26,6 +29,9 @@ echo Building %PROJECT% for Windows 32bit
   -projectPath %CD% ^
   -buildWindowsPlayer "%CD%\Build\Windows32\%PROJECT%.exe" ^
   -quit
+echo Log:
+type Unity.log
+echo End Log
 
 echo Building %PROJECT% for Windows 64bit
 "C:\Program Files\Unity\Editor\Unity.exe" ^
@@ -36,6 +42,9 @@ echo Building %PROJECT% for Windows 64bit
   -projectPath %CD% ^
   -buildWindows64Player "%CD%\Build\Windows64\%PROJECT%.exe" ^
   -quit
+echo Log:
+type Unity.log
+echo End Log
 
 echo Building %PROJECT% for Linux
 "C:\Program Files\Unity\Editor\Unity.exe" ^
@@ -46,7 +55,6 @@ echo Building %PROJECT% for Linux
   -projectPath %CD% ^
   -buildLinuxUniversalPlayer "%CD%\Build\Linux\%PROJECT%" ^
   -quit
-
 echo Log:
 type Unity.log
 echo End Log
