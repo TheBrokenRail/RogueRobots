@@ -5,6 +5,7 @@ sudo: true
 rvm:
   - 2.1.2
 install:
+  - brew install node
   - chmod +x ./Scripts/Install.sh
   - ./Scripts/Install.sh
   - travis_wait 30
