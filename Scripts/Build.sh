@@ -7,6 +7,8 @@ mkdir Build/Windows32
 mkdir Build/Windows64
 mkdir Build/Linux
 
+travis_wait 45
+
 echo "Building $PROJECT for Windows 32bit"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
