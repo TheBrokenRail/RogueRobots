@@ -9,6 +9,5 @@ install:
   - u3d available -p
   - u3d install 2017.3.1f1 --packages Unity,Linux,WebGL,Windows
 script:
-  - /Applications/Unity_2017.3.1f1/Unity.app/Contents/MacOS/Unity -nographics -silent-crashes -projectpath /Users/travis/build/TheBrokenRail/RogueRobots -executeMethod Util.Build -quit -batchmode
-  - cat ~/Library/Logs/Unity/Editor.log
+  - /Applications/Unity_2017.3.1f1/Unity.app/Contents/MacOS/Unity -nographics -silent-crashes -logFile /dev/stdout -projectpath /Users/travis/build/TheBrokenRail/RogueRobots -executeMethod Util.Build -quit -batchmode
   - ls Build
