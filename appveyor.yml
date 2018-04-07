@@ -1,4 +1,9 @@
 version: 1.0.{build}
+environment:
+  USERNAME:
+    secure: e81RLItoy/3B+m4vn00yGA==
+  PASSWORD:
+    secure: ShBqjrqxtgnbubsYy/xwnQ==
 install:
   - Scripts\Install.bat
 build_script:
