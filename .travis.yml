@@ -8,3 +8,6 @@ install:
 script:
   - ./Scripts/Build.sh
   - ls Build
+  - ls Build/Linux
+  - ls Build/Windows32
+  - ls Build/Windows64
