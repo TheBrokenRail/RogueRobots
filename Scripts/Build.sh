@@ -2,6 +2,11 @@
 
 project="RogueRobots"
 
+mkdir Build
+mkdir Build/Windows32
+mkdir Build/Windows64
+mkdir Build/Linux
+
 echo "Building $PROJECT for Windows 32bit"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
@@ -31,6 +36,8 @@ echo "Building $PROJECT for Linux"
   -projectPath $(pwd) \
   -buildLinuxUniversalPlayer "$(pwd)/Build/Linux/$PROJECT" \
   -quit
+
+cat Unity.log
 
 echo 'Zipping Builds'
 zip -r ./Build/Linux.zip ./Build/Linux/
