@@ -4,9 +4,10 @@ rvm:
 install:
   - export LC_ALL=en_US.UTF-8
   - export LANG=en_US.UTF-8
+  - export U3D_PASSWORD=
   - gem install u3d
-  - sudo -E u3d dependencies
-  - sudo -E u3d install latest_stable --packages Unity,Linux,Mac,WebGL,Windows
+  - u3d dependencies
+  - u3d install latest_stable --packages Unity,Linux,Mac,WebGL,Windows
 script:
   - u3d -- -executeMethod Util.Build -quit -batchmode
   - dir Build
