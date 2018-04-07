@@ -7,7 +7,7 @@ install:
   - gem install u3d
   - u3d dependencies
   - u3d available -p
-  - u3d install latest_patch --packages Unity,Linux,WebGL,Windows
+  - u3d install 2017.3.1f1 --packages Unity,Linux,WebGL,Windows
 script:
   - u3d -- -executeMethod Util.Build -quit -batchmode
   - dir Build
