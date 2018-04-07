@@ -10,6 +10,8 @@ call :install UnitySetup64 Windows64EditorInstaller
 call :install UnitySetup-Linux-Support-for-Editor-%UNITY_VERSION% TargetSupportInstaller
 call :install UnitySetup-WebGL-Support-for-Editor-%UNITY_VERSION% TargetSupportInstaller
 call :install UnitySetup-Mac-Support-for-Editor-%UNITY_VERSION% TargetSupportInstaller
+
+cd ..\
 exit /b
 
 :install
