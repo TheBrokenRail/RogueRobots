@@ -1,9 +1,7 @@
 os: osx
 sudo: true
 install:
-  - export LC_ALL=en_US.UTF-8
-  - export LANG=en_US.UTF-8
-  - export U3D_PASSWORD=
+  - chmod +x ./Scripts/Install.sh
   - ./Scripts/Install.sh
   - travis_wait 30
 script:
