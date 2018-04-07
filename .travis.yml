@@ -11,3 +11,5 @@ script:
   - ls Build/Linux
   - ls Build/Windows32
   - ls Build/Windows64
+on_failure:
+  - cat Unity.log
