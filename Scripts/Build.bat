@@ -13,8 +13,9 @@ echo Activating Unity
   -nographics ^
   -silent-crashes ^
   -logFile %CD%/Unity.log ^
-  -username %USERNAME% ^
-  -password %PASSWORD% ^
+  -username "%USERNAME%" ^
+  -password "%PASSWORD%" ^
+  -force-free ^
   -quit
 echo Log:
 type Unity.log
