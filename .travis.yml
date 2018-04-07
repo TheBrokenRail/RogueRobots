@@ -2,8 +2,12 @@ os: osx
 sudo: true
 install:
   - chmod +x ./Scripts/Install.sh
+  - chmod +x ./Scripts/Build.sh
   - ./Scripts/Install.sh
   - travis_wait 30
 script:
-  - /Applications/Unity/Unity.app/Contents/MacOS/Unity -nographics -silent-crashes -logFile /dev/stdout -projectpath ./ -quit -batchmode -executeMethod Util.Build
+  - mkdir Build
+  - mkdir Build/Linux
+  - mkdir Build/
+  - ./Scripts/Build.sh
   - ls Build
