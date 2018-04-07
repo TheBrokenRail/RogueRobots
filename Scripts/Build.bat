@@ -8,7 +8,7 @@ mkdir Build\Windows64
 mkdir Build\Linux
 
 echo Building %PROJECT% for Windows 32bit
-C:\Program Files\Unity\Editor\Unity ^
+"C:\Program Files\Unity\Editor\Unity.exe" ^
   -batchmode ^
   -nographics ^
   -silent-crashes ^
@@ -18,7 +18,7 @@ C:\Program Files\Unity\Editor\Unity ^
   -quit
 
 echo Building %PROJECT% for Windows 64bit
-C:\Program Files\Unity\Editor\Unity ^
+"C:\Program Files\Unity\Editor\Unity.exe" ^
   -batchmode ^
   -nographics ^
   -silent-crashes ^
@@ -28,7 +28,7 @@ C:\Program Files\Unity\Editor\Unity ^
   -quit
 
 echo Building %PROJECT% for Linux
-C:\Program Files\Unity\Editor\Unity ^
+"C:\Program Files\Unity\Editor\Unity.exe" ^
   -batchmode ^
   -nographics ^
   -silent-crashes ^
@@ -38,6 +38,6 @@ C:\Program Files\Unity\Editor\Unity ^
   -quit
 
 echo Zipping Builds
-zip -r .\Build\Windows32.zip .\Build\Windows32\
-zip -r .\Build\Windows64.zip .\Build\Windows64\
-zip -r .\Build\Linux.zip .\Build\Linux\
+7z a -r .\Build\Windows32.zip .\Build\Windows32\
+7z a -r .\Build\Windows64.zip .\Build\Windows64\
+7z a -r .\Build\Linux.zip .\Build\Linux\
