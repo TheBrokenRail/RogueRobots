@@ -14,7 +14,7 @@ install () {
     echo "Download failed"
     exit $?
   fi
-  echo 'Installing'"$1"'.pkg'
+  echo 'Installing '"$1"'.pkg'
   sudo installer -dumplog -package "$1.pkg" -target /
 }
 
