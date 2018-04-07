@@ -6,8 +6,5 @@ install:
   - ./Scripts/Install.sh
   - travis_wait 30
 script:
-  - mkdir Build
-  - mkdir Build/Linux
-  - mkdir Build/
   - ./Scripts/Build.sh
   - ls Build
