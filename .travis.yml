@@ -9,5 +9,5 @@ install:
   - ./Scripts/Install.sh
   - travis_wait 30
 script:
-  - /Applications/Unity/Unity.app/Contents/MacOS/Unity -nographics -silent-crashes -logFile /dev/stdout -projectpath /Users/travis/build/TheBrokenRail/RogueRobots -executeMethod Util.Build -quit -batchmode
+  - /Applications/Unity/Unity.app/Contents/MacOS/Unity -nographics -silent-crashes -logFile /dev/stdout -projectpath ./ -quit -batchmode -executeMethod Util.Build
   - ls Build
