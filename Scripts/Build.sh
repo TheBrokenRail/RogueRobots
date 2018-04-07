@@ -1,6 +1,6 @@
 #!/bin/sh
 
-project="RogueRobots"
+PROJECT=RogueRobots
 
 mkdir Build
 mkdir Build/Windows32
