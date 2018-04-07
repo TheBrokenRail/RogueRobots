@@ -16,6 +16,6 @@ public class Util {
 		buildPlayerOptions.locationPathName = "Build/Linux/RogueRobots";
 		buildPlayerOptions.target = BuildTarget.StandaloneLinuxUniversal;
 		BuildPipeline.BuildPlayer(buildPlayerOptions);
-		EditorApplication.Exit
+		EditorApplication.Exit(0);
 	}
 }
