@@ -9,7 +9,6 @@ mkdir Build\Linux
 
 echo Activating Unity
 "C:\Program Files\Unity\Editor\Unity.exe" ^
-  -nographics ^
   -silent-crashes ^
   -logFile %CD%/Unity.log ^
   -username "%USERNAME%" ^
