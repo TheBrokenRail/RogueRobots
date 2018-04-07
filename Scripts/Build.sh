@@ -38,6 +38,7 @@ echo "Building $PROJECT for Linux 32bit"
   -logFile /dev/stdout \
   -projectPath $(pwd) \
   -buildLinux32Player "$(pwd)/Build/Linux32/$PROJECT" \
+  -stackTraceLogType Full \
   -quit
 
 echo "Building $PROJECT for Linux 64bit"
