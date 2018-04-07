@@ -12,8 +12,8 @@ call :install UnitySetup-WebGL-Support-for-Editor-%UNITY_VERSION% TargetSupportI
 call :install UnitySetup-Windows-Support-for-Editor-%UNITY_VERSION% TargetSupportInstaller
 
 :install
-echo 'Downloading '"%~1"'.pkg'
+echo Downloading %~1.exe
 curl --retry 5 -O "https://netstorage.unity3d.com/unity/%UNITY_HASH%/%~2/%~1.exe"
-echo 'Installing '"$1"'.pkg'
-sudo installer -dumplog -package "$1.pkg" -target /
+echo Installing $1.exe
+%~1.exe /S
 exit /b
