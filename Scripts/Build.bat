@@ -17,7 +17,7 @@ C:\Program Files\Unity\Editor\Unity ^
   -buildWindowsPlayer "%CD%\Build\Windows32\%PROJECT%.exe" ^
   -quit
 
-echo "Building %PROJECT% for Windows 64bit"
+echo Building %PROJECT% for Windows 64bit
 C:\Program Files\Unity\Editor\Unity ^
   -batchmode ^
   -nographics ^
@@ -27,7 +27,7 @@ C:\Program Files\Unity\Editor\Unity ^
   -buildWindows64Player "%CD%\Build\Windows64\%PROJECT%.exe" ^
   -quit
 
-echo "Building %PROJECT% for Linux"
+echo Building %PROJECT% for Linux
 C:\Program Files\Unity\Editor\Unity ^
   -batchmode ^
   -nographics ^
@@ -37,7 +37,7 @@ C:\Program Files\Unity\Editor\Unity ^
   -buildLinuxUniversalPlayer "%CD%\Build\Linux\%PROJECT%" ^
   -quit
 
-echo 'Zipping Builds'
+echo Zipping Builds
 zip -r .\Build\Windows32.zip .\Build\Windows32\
 zip -r .\Build\Windows64.zip .\Build\Windows64\
 zip -r .\Build\Linux.zip .\Build\Linux\
