@@ -15,7 +15,7 @@ echo "Building $PROJECT for Windows 32bit"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile /dev/stdout \
+  -logFile $(pwd)/Unity.log \
   -projectPath $(pwd) \
   -buildWindowsPlayer "$(pwd)/Build/Windows32/$PROJECT.exe" \
   -quit
@@ -25,7 +25,7 @@ echo "Building $PROJECT for Windows 64bit"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile /dev/stdout \
+  -logFile $(pwd)/Unity.log \
   -projectPath $(pwd) \
   -buildWindows64Player "$(pwd)/Build/Windows64/$PROJECT.exe" \
   -quit
@@ -35,7 +35,7 @@ echo "Building $PROJECT for Linux 32bit"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile /dev/stdout \
+  -logFile $(pwd)/Unity.log \
   -projectPath $(pwd) \
   -buildLinux32Player "$(pwd)/Build/Linux32/$PROJECT" \
   -stackTraceLogType Full \
@@ -46,7 +46,7 @@ echo "Building $PROJECT for Linux 64bit"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile /dev/stdout \
+  -logFile $(pwd)/Unity.log \
   -projectPath $(pwd) \
   -buildLinux64Player "$(pwd)/Build/Linux64/$PROJECT" \
   -quit
