@@ -22,6 +22,5 @@ public class Util {
 		Debug.Log("*** Started Linux Build! ***");
 		BuildPipeline.BuildPlayer(buildPlayerOptions);
 		Debug.Log("*** Finished Linux Build! ***");
-		EditorApplication.Exit(0);
 	}
 }
