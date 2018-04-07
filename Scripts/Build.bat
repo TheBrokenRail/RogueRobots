@@ -7,14 +7,45 @@ mkdir Build\Windows32
 mkdir Build\Windows64
 mkdir Build\Linux
 
+echo Activating Unity
+"C:\Program Files\Unity\Editor\Unity.exe" ^
+  -batchmode ^
+  -nographics ^
+  -silent-crashes ^
+  -logFile %CD%/Unity.log ^
+  -username %USERNAME% ^
+  -password %PASSWORD% ^
+  -quit
+
 echo Building %PROJECT% for Windows 32bit
-"C:\Program Files\Unity\Editor\Unity.exe" -batchmode -nographics -silent-crashes -logFile %CD%/Unity.log -projectPath %CD% -buildWindowsPlayer "%CD%\Build\Windows32\%PROJECT%.exe" -quit
+"C:\Program Files\Unity\Editor\Unity.exe" ^
+  -batchmode ^
+  -nographics ^
+  -silent-crashes ^
+  -logFile %CD%/Unity.log ^
+  -projectPath %CD% ^
+  -buildWindowsPlayer "%CD%\Build\Windows32\%PROJECT%.exe" ^
+  -quit
 
 echo Building %PROJECT% for Windows 64bit
-"C:\Program Files\Unity\Editor\Unity.exe" -batchmode -nographics -silent-crashes -logFile %CD%/Unity.log -projectPath %CD% -buildWindows64Player "%CD%\Build\Windows64\%PROJECT%.exe" -quit
+"C:\Program Files\Unity\Editor\Unity.exe" ^
+  -batchmode ^
+  -nographics ^
+  -silent-crashes ^
+  -logFile %CD%/Unity.log ^
+  -projectPath %CD% ^
+  -buildWindows64Player "%CD%\Build\Windows64\%PROJECT%.exe" ^
+  -quit
 
 echo Building %PROJECT% for Linux
-"C:\Program Files\Unity\Editor\Unity.exe" -batchmode -nographics -silent-crashes -logFile %CD%/Unity.log -projectPath %CD% -buildLinuxUniversalPlayer "%CD%\Build\Linux\%PROJECT%" -quit
+"C:\Program Files\Unity\Editor\Unity.exe" ^
+  -batchmode ^
+  -nographics ^
+  -silent-crashes ^
+  -logFile %CD%/Unity.log ^
+  -projectPath %CD% ^
+  -buildLinuxUniversalPlayer "%CD%\Build\Linux\%PROJECT%" ^
+  -quit
 
 echo Log:
 type Unity.log
