@@ -9,5 +9,5 @@ install:
   - u3d available -p
   - u3d install 2017.3.1f1 --packages Unity,Linux,WebGL,Windows
 script:
-  - u3d --trace -- -executeMethod Util.Build -quit -batchmode -username $USERNAME -password $PASSWORD
-  - dir Build
+  - unity -executeMethod Util.Build -quit -batchmode -username $USERNAME -password $PASSWORD
+  - ls Build
