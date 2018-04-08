@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour {
 	public GameObject player;
+	public string lineColorString = "Green";
+	public GameObject particleEffect;
 	private Rigidbody rigidBody;
 	private Player playerScript;
 	private bool held;
@@ -18,6 +20,7 @@ public class Item : MonoBehaviour {
 	private Light gunLight;
 	private float effectsDisplayTime = 0.2f;
 	private Camera firstPersonCamera;
+	private Color lineColor;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +34,17 @@ public class Item : MonoBehaviour {
 		gunAudio = GetComponent<AudioSource> ();
 		gunLight = GetComponent<Light> ();
 		firstPersonCamera = player.GetComponentInChildren<Camera> ();
+		switch (lineColorString) {
+		case "Green":
+			lineColor = Color.green;
+			break;
+		case "Red":
+			lineColor = Color.red;
+			break;
+		default:
+			lineColor = Color.green;
+			break;
+		}
 	}
 	
 	// Update is called once per frame
@@ -88,12 +102,15 @@ public class Item : MonoBehaviour {
 		gunLight.enabled = true;
 		gunLine.enabled = true;
 		gunLine.SetPosition (0, transform.position);
-		gunLine.material.color = Color.green;
+		gunLine.material.color = lineColor;
 		Ray shootRay = new Ray(transform.position, transform.forward);
 		RaycastHit shootHit;
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;
 		if (Physics.Raycast (shootRay, out shootHit, range, ~shootableMask)) {
+			if (particleEffect != null) {
+				Instantiate (particleEffect, shootHit.point, Quaternion.Euler(Vector3.zero));
+			}
 			Enemy enemy = shootHit.collider.GetComponent<Enemy>();
 			if (enemy != null) {
 				enemy.TakeDamage (damagePerShot);
