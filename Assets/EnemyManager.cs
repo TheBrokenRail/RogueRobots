@@ -2,9 +2,9 @@
 
 public class EnemyManager : MonoBehaviour {
 	public GameObject enemy;
-	public float spawnTime = 8f;
+	public float spawnTime = 6f;
 	public Transform[] spawnPoints;
-	public int maxEnemys = 50;
+	public int maxEnemys = 75;
 	private int enemysSpawned = 0;
 	private Player playerScript;
 

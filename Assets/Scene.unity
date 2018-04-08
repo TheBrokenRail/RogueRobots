@@ -834,13 +834,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1094283677709156, guid: 7fd37a3baea58424eb50621a0984bc49, type: 2}
-  spawnTime: 8
+  spawnTime: 6
   spawnPoints:
   - {fileID: 1618848617}
   - {fileID: 1365649189}
   - {fileID: 1784128259}
   - {fileID: 497108245}
-  maxEnemys: 50
+  maxEnemys: 75
 --- !u!136 &1109471783
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -963,7 +963,7 @@ MonoBehaviour:
   particleEffect: {fileID: 1369744403290162, guid: 9b6cc6dae446e384b86b30c3c027162f,
     type: 2}
   damagePerShot: 15
-  timeBetweenBullets: 0.75
+  timeBetweenBullets: 0.5
   range: 100
 --- !u!1001 &1330857141
 Prefab:
