@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour {
 	public GameObject player;
-	public string lineColorString = "Green";
 	public GameObject particleEffect;
 	private Rigidbody rigidBody;
 	private Player playerScript;
@@ -22,10 +21,12 @@ public class Item : MonoBehaviour {
 	private Camera firstPersonCamera;
 	public Color lineColor = Color.green;
 	public string itemName = "Laser Gun";
-	public float overheatChance = 0.25f;
+	private float overheatChance = 0.5f;
+	public float temperture = 20;
 
 	// Use this for initialization
 	void Start () {
+		timer = timeBetweenBullets;
 		held = false;
 		rigidBody = GetComponent<Rigidbody>();
 		playerScript = player.GetComponent<Player>();
@@ -36,6 +37,7 @@ public class Item : MonoBehaviour {
 		gunAudio = GetComponent<AudioSource> ();
 		gunLight = GetComponent<Light> ();
 		firstPersonCamera = player.GetComponentInChildren<Camera> ();
+		DisableEffects ();
 	}
 	
 	// Update is called once per frame
@@ -79,6 +81,12 @@ public class Item : MonoBehaviour {
 		} else {
 			rigidBody.useGravity = true;
 		}
+		if (temperture > 20) {
+			temperture = temperture - Time.deltaTime * 10;
+			if (temperture < 20) {
+				temperture = 20;
+			}
+		}
 	}
 
 	public void DisableEffects () {
@@ -89,6 +97,13 @@ public class Item : MonoBehaviour {
 
 	void Shoot () {
 		timer = 0f;
+		if (itemName.StartsWith("Expiremental") && overheatChance >= Random.value) {
+			temperture = 80;
+		}
+		if (temperture > 20) {
+			playerScript.TakeDamage (2);
+			return;
+		}
 		gunAudio.Play ();
 		gunLight.enabled = true;
 		gunLine.enabled = true;
@@ -98,10 +113,6 @@ public class Item : MonoBehaviour {
 		RaycastHit shootHit;
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;
-		if (itemName.StartsWith("Expiremental") && overheatChance >= Random.value) {
-			playerScript.TakeDamage (2);
-			return;
-		}
 		if (Physics.Raycast (shootRay, out shootHit, range, ~shootableMask)) {
 			if (particleEffect != null) {
 				Instantiate (particleEffect, shootHit.point, Quaternion.Euler(Vector3.zero));

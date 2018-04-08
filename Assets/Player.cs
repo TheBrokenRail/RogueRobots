@@ -116,7 +116,7 @@ public class Player : MonoBehaviour {
 		style.font = font;
 		string itemData = "";
 		if (holding != null) {
-			itemData = "\n\n" + holding.itemName + "\n" + holding.damagePerShot + " Damage\n" + holding.timeBetweenBullets + " Seconds Between Shots";
+			itemData = "\n\n" + holding.itemName + "\n" + holding.damagePerShot + " Damage\n" + holding.timeBetweenBullets + " Seconds Between Shots\n" + System.Math.Round(holding.temperture, 1) + "\u00B0 Celsius";
 		}
 		if (!dead) {
 			GUI.Box (new Rect (10, 10, 0, 0), "Health: " + health + "\nRegeneration Points: " + regenerationPoints + "\nScore: " + score + itemData, style);
