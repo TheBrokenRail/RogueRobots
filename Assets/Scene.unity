@@ -777,7 +777,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalScale.z
@@ -912,7 +912,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1760300848983802, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
       propertyPath: m_Name
@@ -965,6 +965,7 @@ MonoBehaviour:
   damagePerShot: 15
   timeBetweenBullets: 0.5
   range: 100
+  lineColor: {r: 1, g: 0, b: 0, a: 0}
   itemName: Laser Cannon
 --- !u!1001 &1330857141
 Prefab:
@@ -1003,13 +1004,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1109471774}
+    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
+        type: 2}
+      propertyPath: lineColor.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
   m_IsPrefabParent: 0
@@ -1134,7 +1140,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_Height
@@ -1276,6 +1282,36 @@ Prefab:
         type: 2}
       propertyPath: itemName
       value: Epiremental Laser Cannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 23141581015652440, guid: 61c69df858bc6204ab7872ca06ca6d86,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: abfd9a9f38fd7eb4181afe671fedf659, type: 2}
+    - target: {fileID: 23091254058843596, guid: 61c69df858bc6204ab7872ca06ca6d86,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59a14df13b4738e4d8bdf017bce4852a, type: 2}
+    - target: {fileID: 23106173110491282, guid: 61c69df858bc6204ab7872ca06ca6d86,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59a14df13b4738e4d8bdf017bce4852a, type: 2}
+    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
+        type: 2}
+      propertyPath: lineColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
+        type: 2}
+      propertyPath: lineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
+        type: 2}
+      propertyPath: lineColor.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}

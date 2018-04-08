@@ -99,7 +99,7 @@ public class Player : MonoBehaviour {
 		if (transform.position.y < -5) {
 			TakeDamage (20);
 		}
-		if (regenerationPoints >= 20) {
+		if (regenerationPoints >= 50) {
 			Regenerate (5);
 			regenerationPoints = 0;
 		}
@@ -148,6 +148,9 @@ public class Player : MonoBehaviour {
 
 	private void Regenerate (int amount) {
 		health = health + amount;
+		if (health > 20) {
+			health = 20;
+		}
 		if (!dead) {
 			tintColor = true;
 			alpha = 0.5f;
