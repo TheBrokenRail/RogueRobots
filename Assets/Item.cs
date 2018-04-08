@@ -101,7 +101,7 @@ public class Item : MonoBehaviour {
 			temperture = 80;
 		}
 		if (temperture > 20) {
-			playerScript.TakeDamage (2);
+			playerScript.WarnTint ();
 			return;
 		}
 		gunAudio.Play ();

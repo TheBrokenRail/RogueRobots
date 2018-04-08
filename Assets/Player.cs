@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
 	private float thirdPersonZoom = 0;
 	public float zoomSpeed = 2f;
 	private float regenerationPoints = 0;
-	private bool tintColor = false;
+	private int tintColor = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour {
 		if (transform.position.y < -5) {
 			TakeDamage (20);
 		}
-		if (regenerationPoints >= 50) {
+		if (regenerationPoints >= 100) {
 			Regenerate (5);
 			regenerationPoints = 0;
 		}
@@ -123,10 +123,12 @@ public class Player : MonoBehaviour {
 		} else {
 			GUI.Box (new Rect (10, 10, 0, 0), "Score: " + score + itemData, style);
 		}
-		if (tintColor) {
-			texture.SetPixel (0, 0, new Color (0, 255, 0, alpha));
-		} else {
+		if (tintColor == 0) {
 			texture.SetPixel (0, 0, new Color (255, 0, 0, alpha));
+		} else if (tintColor == 1) {
+			texture.SetPixel (0, 0, new Color (0, 255, 0, alpha));
+		} else if (tintColor == 2) {
+			texture.SetPixel (0, 0, new Color (255, 255, 0, alpha));
 		}
 		texture.Apply ();
 		GUI.DrawTexture(new Rect (0, 0, Screen.width, Screen.height), texture);
@@ -141,7 +143,14 @@ public class Player : MonoBehaviour {
 		regenerationPoints = 0;
 		health = health - damage;
 		if (!dead) {
-			tintColor = false;
+			tintColor = 0;
+			alpha = 0.5f;
+		}
+	}
+
+	public void WarnTint () {
+		if (!dead) {
+			tintColor = 2;
 			alpha = 0.5f;
 		}
 	}
@@ -152,7 +161,7 @@ public class Player : MonoBehaviour {
 			health = 20;
 		}
 		if (!dead) {
-			tintColor = true;
+			tintColor = 1;
 			alpha = 0.5f;
 		}
 	}
