@@ -21,7 +21,7 @@ public class Item : MonoBehaviour {
 	private Camera firstPersonCamera;
 	public Color lineColor = Color.green;
 	public string itemName = "Laser Gun";
-	private float overheatChance = 0.25f;
+	private float overheatChance = 0.1f;
 	public float temperture = 20;
 
 	// Use this for initialization
