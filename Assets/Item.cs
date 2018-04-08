@@ -22,6 +22,7 @@ public class Item : MonoBehaviour {
 	private Camera firstPersonCamera;
 	public Color lineColor = Color.green;
 	public string itemName = "Laser Gun";
+	public float overheatChance = 0.25f;
 
 	// Use this for initialization
 	void Start () {
@@ -97,6 +98,10 @@ public class Item : MonoBehaviour {
 		RaycastHit shootHit;
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;
+		if (itemName.StartsWith("Expiremental") && overheatChance >= Random.value) {
+			playerScript.TakeDamage (2);
+			return;
+		}
 		if (Physics.Raycast (shootRay, out shootHit, range, ~shootableMask)) {
 			if (particleEffect != null) {
 				Instantiate (particleEffect, shootHit.point, Quaternion.Euler(Vector3.zero));

@@ -967,6 +967,7 @@ MonoBehaviour:
   range: 100
   lineColor: {r: 1, g: 0, b: 0, a: 0}
   itemName: Laser Cannon
+  overheatChance: 0
 --- !u!1001 &1330857141
 Prefab:
   m_ObjectHideFlags: 0
@@ -1276,7 +1277,7 @@ Prefab:
     - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
         type: 2}
       propertyPath: timeBetweenBullets
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
         type: 2}
@@ -1312,6 +1313,11 @@ Prefab:
         type: 2}
       propertyPath: lineColor.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
+        type: 2}
+      propertyPath: overheatChance
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
