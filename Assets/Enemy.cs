@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		if (playerScript.dead) {
+			playerScript.AddKillStreak ();
 			Destroy (gameObject);
 		}
 	}

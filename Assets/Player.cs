@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
-	public bool holding;
+	public Item holding;
 	private CharacterController controller;
 	private int health;
 	private float fallDistance;
@@ -20,12 +21,13 @@ public class Player : MonoBehaviour {
 	private bool frontFacing = false;
 	private float thirdPersonZoom = 0;
 	public float zoomSpeed = 2f;
+	private int killStreak = 0;
+	private bool tintColor = false;
 
 	// Use this for initialization
 	void Start () {
 		firstPersonCamera = GetComponentInChildren<Camera> ();
 		Debug.Log (firstPersonCamera);
-		holding = false;
 		controller = GetComponent<CharacterController>();
 		health = 20;
 		score = 0;
@@ -97,6 +99,13 @@ public class Player : MonoBehaviour {
 		if (transform.position.y < -5) {
 			TakeDamage (20);
 		}
+		if (killStreak >= 2) {
+			Regenerate (2);
+			killStreak = 0;
+		}
+		if (Input.GetButtonDown("RestartGame") && dead) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+		}
 	}
 
 	void OnGUI () {
@@ -105,12 +114,20 @@ public class Player : MonoBehaviour {
 		style.fontSize = 24;
 		Font font = (Font)Resources.Load ("arial", typeof(Font));
 		style.font = font;
-		if (!dead) {
-			GUI.Box (new Rect (10, 10, 0, 0), "Health: " + health + "\nScore: " + score, style);
-		} else {
-			GUI.Box (new Rect (10, 10, 0, 0), "Score: " + score, style);
+		string itemData = "";
+		if (holding != null) {
+			itemData = "\n\n" + holding.itemName + "\n" + holding.damagePerShot + " Damage\n" + holding.timeBetweenBullets + " Seconds Between Shots";
 		}
-		texture.SetPixel (0, 0, new Color(255, 0, 0, alpha));
+		if (!dead) {
+			GUI.Box (new Rect (10, 10, 0, 0), "Health: " + health + "\nScore: " + score + itemData, style);
+		} else {
+			GUI.Box (new Rect (10, 10, 0, 0), "Score: " + score + itemData, style);
+		}
+		if (tintColor) {
+			texture.SetPixel (0, 0, new Color (0, 255, 0, alpha));
+		} else {
+			texture.SetPixel (0, 0, new Color (255, 0, 0, alpha));
+		}
 		texture.Apply ();
 		GUI.DrawTexture(new Rect (0, 0, Screen.width, Screen.height), texture);
 		if (alpha > 0) {
@@ -123,8 +140,25 @@ public class Player : MonoBehaviour {
 	public void TakeDamage (int damage) {
 		health = health - damage;
 		if (!dead) {
+			tintColor = false;
 			alpha = 0.5f;
 		}
+	}
+
+	private void Regenerate (int amount) {
+		health = health + amount;
+		if (!dead) {
+			tintColor = true;
+			alpha = 0.25f;
+		}
+	}
+
+	public void AddKillStreak() {
+		killStreak = killStreak + 1;
+	}
+
+	public void DestroyKillStreak() {
+		killStreak = 0;
 	}
 
 	public void Score () {

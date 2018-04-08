@@ -21,6 +21,7 @@ public class Item : MonoBehaviour {
 	private float effectsDisplayTime = 0.2f;
 	private Camera firstPersonCamera;
 	private Color lineColor;
+	public string itemName = "Laser Gun";
 
 	// Use this for initialization
 	void Start () {
@@ -60,10 +61,10 @@ public class Item : MonoBehaviour {
 				if (item != null && item == this) {
 					if (held) {
 						held = false;
-						playerScript.holding = false;
+						playerScript.holding = null;
 					} else if (!playerScript.holding) {
 						held = true;
-						playerScript.holding = true;
+						playerScript.holding = this;
 					}
 				}
 			}
@@ -114,6 +115,8 @@ public class Item : MonoBehaviour {
 			Enemy enemy = shootHit.collider.GetComponent<Enemy>();
 			if (enemy != null) {
 				enemy.TakeDamage (damagePerShot);
+			} else {
+				playerScript.DestroyKillStreak ();
 			}
 			gunLine.SetPosition (1, shootHit.point);
 		} else {
