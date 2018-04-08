@@ -35,24 +35,24 @@ public class Enemy : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		if (playerScript.dead) {
-			playerScript.AddKillStreak ();
 			Destroy (gameObject);
 		}
 	}
 
 	void OnCollisionEnter (Collision col) {
-		if(col.gameObject == player) {
+		if (col.gameObject == player) {
 			playerInRange = true;
 		}
 	}
 
 	void OnCollisionExit (Collision col) {
-		if(col.gameObject == player) {
+		if (col.gameObject == player) {
 			playerInRange = false;
 		}
 	}
 
 	public void TakeDamage (int damage) {
 		health = health - damage;
+		playerScript.AddRegenerationPoints (damage);
 	}
 }

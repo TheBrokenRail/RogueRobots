@@ -18,9 +18,9 @@ public class Item : MonoBehaviour {
 	private LineRenderer gunLine;
 	private AudioSource gunAudio;
 	private Light gunLight;
-	private float effectsDisplayTime = 0.2f;
+	private float effectsDisplayTime = 0.05f;
 	private Camera firstPersonCamera;
-	private Color lineColor;
+	public Color lineColor = Color.green;
 	public string itemName = "Laser Gun";
 
 	// Use this for initialization
@@ -35,17 +35,6 @@ public class Item : MonoBehaviour {
 		gunAudio = GetComponent<AudioSource> ();
 		gunLight = GetComponent<Light> ();
 		firstPersonCamera = player.GetComponentInChildren<Camera> ();
-		switch (lineColorString) {
-		case "Green":
-			lineColor = Color.green;
-			break;
-		case "Red":
-			lineColor = Color.red;
-			break;
-		default:
-			lineColor = Color.green;
-			break;
-		}
 	}
 	
 	// Update is called once per frame
@@ -70,7 +59,7 @@ public class Item : MonoBehaviour {
 			}
 		}
 		// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
-		if(timer >= timeBetweenBullets * effectsDisplayTime) {
+		if(timer >= effectsDisplayTime) {
 			DisableEffects ();
 		}
 		if (held) {
@@ -115,8 +104,6 @@ public class Item : MonoBehaviour {
 			Enemy enemy = shootHit.collider.GetComponent<Enemy>();
 			if (enemy != null) {
 				enemy.TakeDamage (damagePerShot);
-			} else {
-				playerScript.DestroyKillStreak ();
 			}
 			gunLine.SetPosition (1, shootHit.point);
 		} else {

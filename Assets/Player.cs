@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
 	private bool frontFacing = false;
 	private float thirdPersonZoom = 0;
 	public float zoomSpeed = 2f;
-	private int killStreak = 0;
+	private float regenerationPoints = 0;
 	private bool tintColor = false;
 
 	// Use this for initialization
@@ -99,9 +99,9 @@ public class Player : MonoBehaviour {
 		if (transform.position.y < -5) {
 			TakeDamage (20);
 		}
-		if (killStreak >= 2) {
-			Regenerate (2);
-			killStreak = 0;
+		if (regenerationPoints >= 20) {
+			Regenerate (5);
+			regenerationPoints = 0;
 		}
 		if (Input.GetButtonDown("RestartGame") && dead) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
@@ -119,7 +119,7 @@ public class Player : MonoBehaviour {
 			itemData = "\n\n" + holding.itemName + "\n" + holding.damagePerShot + " Damage\n" + holding.timeBetweenBullets + " Seconds Between Shots";
 		}
 		if (!dead) {
-			GUI.Box (new Rect (10, 10, 0, 0), "Health: " + health + "\nScore: " + score + itemData, style);
+			GUI.Box (new Rect (10, 10, 0, 0), "Health: " + health + "\nRegeneration Points: " + regenerationPoints + "\nScore: " + score + itemData, style);
 		} else {
 			GUI.Box (new Rect (10, 10, 0, 0), "Score: " + score + itemData, style);
 		}
@@ -138,6 +138,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void TakeDamage (int damage) {
+		regenerationPoints = 0;
 		health = health - damage;
 		if (!dead) {
 			tintColor = false;
@@ -149,16 +150,12 @@ public class Player : MonoBehaviour {
 		health = health + amount;
 		if (!dead) {
 			tintColor = true;
-			alpha = 0.25f;
+			alpha = 0.5f;
 		}
 	}
 
-	public void AddKillStreak() {
-		killStreak = killStreak + 1;
-	}
-
-	public void DestroyKillStreak() {
-		killStreak = 0;
+	public void AddRegenerationPoints (float amount) {
+		regenerationPoints = regenerationPoints + amount;
 	}
 
 	public void Score () {
