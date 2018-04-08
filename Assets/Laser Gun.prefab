@@ -413,9 +413,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  particleEffect: {fileID: 0}
   damagePerShot: 5
   timeBetweenBullets: 0.15
   range: 100
+  lineColor: {r: 0, g: 1, b: 0, a: 1}
+  itemName: Laser Gun
+  temperture: 20
 --- !u!120 &120720473846751266
 LineRenderer:
   m_ObjectHideFlags: 1
