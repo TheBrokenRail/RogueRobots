@@ -14,6 +14,10 @@ public class Table : MonoBehaviour {
 	private int page = 0;
 	public GameObject[] weapons;
 	public Transform spawnPoint;
+	private bool scrollLeft = false;
+	private bool scrollRight = false;
+	private bool submit = false;
+	private bool cancel = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +29,10 @@ public class Table : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		scrollLeft = Input.GetButtonDown ("ScrollLeft");
+		scrollRight = Input.GetButtonDown ("ScrollRight");
+		submit = Input.GetButtonDown ("Submit");
+		cancel = Input.GetButtonDown ("Cancel");
 		Ray clickRay = new Ray(firstPersonCamera.transform.position, firstPersonCamera.transform.forward);
 		RaycastHit clickHit;
 		if (Physics.Raycast (clickRay, out clickHit, range, ~playerMask)) {
@@ -44,7 +52,8 @@ public class Table : MonoBehaviour {
 	void OnGUI() {
 		texture.SetPixel (0, 0, new Color(0, 0, 255, alpha));
 		texture.Apply ();
-		if (Input.GetButtonDown ("Cancel")) {
+		if (cancel) {
+			cancel = false;
 			open = false;
 		}
 		if (open) {
@@ -55,11 +64,13 @@ public class Table : MonoBehaviour {
 					alpha = 0.5f;
 				}
 			}
-			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+			if (scrollLeft) {
+				scrollLeft = false;
 				alpha = 0.35f;
 				page = page - 1;
 			}
-			if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			if (scrollRight) {
+				scrollRight = false;
 				alpha = 0.35f;
 				page = page + 1;
 			}
@@ -67,7 +78,7 @@ public class Table : MonoBehaviour {
 				page = 0;
 			}
 			if (page > weapons.Length - 1) {
-				page = weapons.Length - 1;
+				page = 0;
 			}
 			Item weapon = weapons [page].GetComponent<Item> ();
 			string itemData = weapon.itemName + "\n" + weapon.damagePerShot + " Damage\n" + weapon.timeBetweenBullets + " Seconds Between Shots\nCosts " + weapon.itemWorth + " Spare Parts";
@@ -78,9 +89,15 @@ public class Table : MonoBehaviour {
 			Font font = (Font)Resources.Load ("arial", typeof(Font));
 			style.font = font;
 			GUI.Box (new Rect(Screen.width / 2, Screen.height / 2, 0, 0), itemData, style);
-			if (Input.GetButtonDown ("Submit") && playerScript.GetSpareParts () >= weapon.itemWorth) {
-				Instantiate (weapon, spawnPoint.position, Quaternion.Euler(Vector3.zero));
-				playerScript.RemoveSpareParts (weapon.itemWorth);
+			if (submit) {
+				submit = false;
+				if (playerScript.GetSpareParts () >= weapon.itemWorth) {
+					Instantiate (weapon, spawnPoint.position, Quaternion.Euler (Vector3.zero));
+					playerScript.RemoveSpareParts (weapon.itemWorth);
+					open = false;
+				} else {
+					alpha = 0.35f;
+				}
 			}
 		}
 	}

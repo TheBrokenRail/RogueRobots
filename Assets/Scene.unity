@@ -1556,6 +1556,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 1760300848983802, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
   - {fileID: 1669583694517372, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
+  - {fileID: 1520282369446684, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
   spawnPoint: {fileID: 742560039}
 --- !u!1 &977485870
 GameObject:
