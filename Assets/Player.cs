@@ -178,4 +178,12 @@ public class Player : MonoBehaviour {
 	public void AddSpareParts (int amount) {
 		spareParts = spareParts + amount;
 	}
+
+	public int GetSpareParts() {
+		return spareParts;
+	}
+
+	public void RemoveSpareParts(int amount) {
+		spareParts = spareParts - amount;
+	}
 }

@@ -1439,6 +1439,7 @@ GameObject:
   - component: {fileID: 793607760}
   - component: {fileID: 793607759}
   - component: {fileID: 793607758}
+  - component: {fileID: 793607762}
   m_Layer: 0
   m_Name: Table Top
   m_TagString: Untagged
@@ -1512,6 +1513,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793607762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 793607757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcec0da3448f77c47b89cde16283f27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1109471774}
+  weapons:
+  - {fileID: 1760300848983802, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+  - {fileID: 1669583694517372, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
+  spawnPoint: {fileID: 0}
 --- !u!1 &977485870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,97 +1724,46 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4304076433014554, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 82
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4304076433014554, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.2
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4304076433014554, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
       propertyPath: m_LocalPosition.z
       value: 98.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4304076433014554, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4304076433014554, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4304076433014554, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4304076433014554, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4304076433014554, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1760300848983802, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
-      propertyPath: m_Name
-      value: Laser Cannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
+    - target: {fileID: 114545069282939830, guid: c227e2283941ac34d831bb26bead9bdb,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1109471774}
-    - target: {fileID: 23141581015652440, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bd3da1e12c7cf784985106a56ff6498e, type: 2}
-    - target: {fileID: 23091254058843596, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 59a14df13b4738e4d8bdf017bce4852a, type: 2}
-    - target: {fileID: 23106173110491282, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 59a14df13b4738e4d8bdf017bce4852a, type: 2}
-    - target: {fileID: 120720473846751266, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1284998499 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1760300848983802, guid: 61c69df858bc6204ab7872ca06ca6d86,
-    type: 2}
-  m_PrefabInternal: {fileID: 1284998498}
---- !u!114 &1284998500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1284998499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da2a11bac996b1b4daa494a505914be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1109471774}
-  particleEffect: {fileID: 1369744403290162, guid: 9b6cc6dae446e384b86b30c3c027162f,
-    type: 2}
-  damagePerShot: 15
-  timeBetweenBullets: 0.5
-  range: 100
-  lineColor: {r: 1, g: 0, b: 0, a: 1}
-  itemName: Laser Cannon
-  temperture: 20
-  itemWorth: 8
 --- !u!1001 &1330857141
 Prefab:
   m_ObjectHideFlags: 0
@@ -3113,123 +3079,43 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4615411081025686, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 84
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4615411081025686, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.2
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4615411081025686, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
       propertyPath: m_LocalPosition.z
       value: 98.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4615411081025686, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4615411081025686, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4615411081025686, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4615411081025686, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4845257791269480, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+    - target: {fileID: 4615411081025686, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1760300848983802, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
-      propertyPath: m_Name
-      value: Expiremental Laser Cannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
+    - target: {fileID: 114892506287449194, guid: d185a5ae0664fb840b03bb246661325a,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1109471774}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: lineColorString
-      value: Green
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: particleEffect
-      value: 
-      objectReference: {fileID: 1369744403290162, guid: a85ae8ecb1717e540a087bdea258a1be,
-        type: 2}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: damagePerShot
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: timeBetweenBullets
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: itemName
-      value: Expiremental Laser Cannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 23141581015652440, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: abfd9a9f38fd7eb4181afe671fedf659, type: 2}
-    - target: {fileID: 23091254058843596, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 59a14df13b4738e4d8bdf017bce4852a, type: 2}
-    - target: {fileID: 23106173110491282, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 59a14df13b4738e4d8bdf017bce4852a, type: 2}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: lineColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: lineColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: lineColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: overheatChance
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: lineColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 120720473846751266, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114821103271273898, guid: 61c69df858bc6204ab7872ca06ca6d86,
-        type: 2}
-      propertyPath: itemWorth
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: d185a5ae0664fb840b03bb246661325a, type: 2}
   m_IsPrefabParent: 0
