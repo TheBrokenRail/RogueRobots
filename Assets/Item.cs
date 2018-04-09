@@ -23,9 +23,11 @@ public class Item : MonoBehaviour {
 	public string itemName = "Laser Gun";
 	private float overheatChance = 0.1f;
 	public float temperture = 20;
+	public int itemWorth = 6;
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindWithTag ("Player");
 		timer = timeBetweenBullets;
 		held = false;
 		rigidBody = GetComponent<Rigidbody>();
@@ -87,6 +89,15 @@ public class Item : MonoBehaviour {
 				temperture = 20;
 			}
 		}
+	}
+
+	public void Burn () {
+		playerScript.AddSpareParts (itemWorth);
+		Destroy (gameObject);
+	}
+
+	public bool GetHeld() {
+		return held;
 	}
 
 	public void DisableEffects () {

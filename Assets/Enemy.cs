@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour {
 		}
 		if (health < 1) {
 			playerScript.Score ();
+			playerScript.AddSpareParts (Random.Range(1, 4));
 			Instantiate (explosion, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}

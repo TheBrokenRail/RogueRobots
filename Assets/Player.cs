@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
 	public float zoomSpeed = 2f;
 	private float regenerationPoints = 0;
 	private int tintColor = 0;
+	private int spareParts = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -119,9 +120,9 @@ public class Player : MonoBehaviour {
 			itemData = "\n\n" + holding.itemName + "\n" + holding.damagePerShot + " Damage\n" + holding.timeBetweenBullets + " Seconds Between Shots\n" + System.Math.Round(holding.temperture, 1) + "\u00B0 Celsius";
 		}
 		if (!dead) {
-			GUI.Box (new Rect (10, 10, 0, 0), "Health: " + health + "\nRegeneration Points: " + regenerationPoints + "\nScore: " + score + itemData, style);
+			GUI.Box (new Rect (10, 10, 0, 0), "Health: " + health + "\nRegeneration Points: " + regenerationPoints + "\nScore: " + score + "\n" + spareParts + " Spare Parts" + itemData, style);
 		} else {
-			GUI.Box (new Rect (10, 10, 0, 0), "Score: " + score + itemData, style);
+			GUI.Box (new Rect (10, 10, 0, 0), "Score: " + score + "\n" + spareParts + " Spare Parts" + itemData, style);
 		}
 		if (tintColor == 0) {
 			texture.SetPixel (0, 0, new Color (255, 0, 0, alpha));
@@ -172,5 +173,9 @@ public class Player : MonoBehaviour {
 
 	public void Score () {
 		score = score + 1;
+	}
+
+	public void AddSpareParts (int amount) {
+		spareParts = spareParts + amount;
 	}
 }
