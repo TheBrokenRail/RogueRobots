@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour {
 
 
 	void Spawn () {
-		if (enemysSpawned >= maxEnemys || playerScript.dead) {
+		if (enemysSpawned >= maxEnemys || playerScript.dead || (transform.position.x >= 77.5 && transform.position.x <= 86.5 && transform.position.z >= 91.5 && transform.position.z <= 100.5)) {
 			return;
 		}
 		int spawnPointIndex = Random.Range (0, spawnPoints.Length);
