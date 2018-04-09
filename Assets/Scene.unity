@@ -1344,6 +1344,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &742560038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 742560039}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &742560039
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742560038}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 83, y: 2, z: 98.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &769662946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,7 +1556,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 1760300848983802, guid: 61c69df858bc6204ab7872ca06ca6d86, type: 2}
   - {fileID: 1669583694517372, guid: c227e2283941ac34d831bb26bead9bdb, type: 2}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 742560039}
 --- !u!1 &977485870
 GameObject:
   m_ObjectHideFlags: 0
