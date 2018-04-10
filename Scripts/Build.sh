@@ -5,10 +5,7 @@ PROJECT=RogueRobots
 mkdir Build
 mkdir Build/Windows32
 mkdir Build/Windows64
-mkdir Build/Linux32
-mkdir Build/Linux64
-
-travis_wait 45
+mkdir Build/OSX
 
 echo "Building $PROJECT for Windows 32bit"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
