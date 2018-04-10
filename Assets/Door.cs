@@ -34,7 +34,7 @@ public class Door : MonoBehaviour {
 			}
 		}
 		if (open && angle < 90) {
-			float diff = Time.deltaTime * 100;
+			float diff = Time.deltaTime * 200;
 			if (diff + angle > 90) {
 				diff = diff + angle - 90;
 			}
@@ -42,7 +42,7 @@ public class Door : MonoBehaviour {
 			angle = angle + diff;
 		}
 		if (!open && angle > 0) {
-			float diff = Time.deltaTime * 100;
+			float diff = Time.deltaTime * 200;
 			if (angle - diff < 0) {
 				diff = (angle - diff) * -1;
 			}

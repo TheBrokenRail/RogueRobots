@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Table : MonoBehaviour {
 	public GameObject player;
@@ -18,6 +19,7 @@ public class Table : MonoBehaviour {
 	private bool scrollRight = false;
 	private bool submit = false;
 	private bool cancel = false;
+	private FirstPersonController controller;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +27,8 @@ public class Table : MonoBehaviour {
 		playerMask = LayerMask.GetMask ("Player");
 		texture = new Texture2D (1, 1, TextureFormat.ARGB32, false);
 		playerScript = player.GetComponent<Player> ();
+		controller = player.GetComponent<FirstPersonController> ();
+		controller.enabled = true;
 	}
 	
 	// Update is called once per frame
@@ -46,6 +50,11 @@ public class Table : MonoBehaviour {
 			if (open && item == null && item != this) {
 				open = false;
 			}
+		}
+		if (open) {
+			controller.enabled = false;
+		} else {
+			controller.enabled = true;
 		}
 	}
 
@@ -75,7 +84,7 @@ public class Table : MonoBehaviour {
 				page = page + 1;
 			}
 			if (page < 0) {
-				page = 0;
+				page = weapons.Length - 1;
 			}
 			if (page > weapons.Length - 1) {
 				page = 0;
