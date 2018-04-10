@@ -39,6 +39,7 @@ echo "Building $PROJECT for OSX 64bit"
   -quit
 
 echo 'Zipping Builds'
-zip -r ./Build/Windows32.zip ./Build/Windows32/
-zip -r ./Build/Windows64.zip ./Build/Windows64/
-zip -r ./Build/OSX.zip ./Build/OSX/
+mkdir GH-Pages
+zip -r ./GH-Pages/Windows32.zip ./Build/Windows32/
+zip -r ./GH-Pages/Windows64.zip ./Build/Windows64/
+zip -r ./GH-Pages/OSX.zip ./Build/OSX/
