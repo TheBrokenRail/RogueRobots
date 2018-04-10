@@ -13,7 +13,7 @@ echo "Building $PROJECT for Windows 32bit"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile $(pwd)/GH-Pages/Unity.log \
+  -logFile /dev/stdout \
   -projectPath $(pwd) \
   -buildWindowsPlayer "$(pwd)/Build/Windows32/$PROJECT.exe" \
   -quit
@@ -23,7 +23,7 @@ echo "Building $PROJECT for Windows 64bit"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile $(pwd)/GH-Pages/Unity.log \
+  -logFile /dev/stdout \
   -projectPath $(pwd) \
   -buildWindows64Player "$(pwd)/Build/Windows64/$PROJECT.exe" \
   -quit
@@ -33,7 +33,7 @@ echo "Building $PROJECT for OSX 64bit"
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile $(pwd)/GH-Pages/Unity.log \
+  -logFile /dev/stdout \
   -projectPath $(pwd) \
   -buildOSX64Player "$(pwd)/Build/OSX/$PROJECT.app" \
   -stackTraceLogType Full \
