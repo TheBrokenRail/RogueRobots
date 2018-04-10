@@ -38,6 +38,7 @@ echo "Building $PROJECT for OSX 64bit"
   -buildOSX64Player "$(pwd)/Build/OSX/$PROJECT" \
   -quit
 
+ls Build
 ls Build/OSX
 echo 'Zipping Builds'
 zip -r ./GH-Pages/Windows32.zip ./Build/Windows32/
