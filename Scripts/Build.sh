@@ -7,7 +7,6 @@ mkdir Build/Windows32
 mkdir Build/Windows64
 mkdir Build/OSX
 mkdir Build/Linux
-mkdir GH-Pages
 
 echo "Building $PROJECT for Windows 32bit"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
