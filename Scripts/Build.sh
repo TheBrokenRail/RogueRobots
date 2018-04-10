@@ -35,10 +35,10 @@ echo "Building $PROJECT for OSX 64bit"
   -silent-crashes \
   -logFile /dev/stdout \
   -projectPath $(pwd) \
-  -buildOSX64Player "$(pwd)/Build/OSX/$PROJECT.app" \
-  -stackTraceLogType Full \
+  -buildOSX64Player "$(pwd)/Build/OSX/$PROJECT" \
   -quit
 
+ls Build/OSX
 echo 'Zipping Builds'
 zip -r ./GH-Pages/Windows32.zip ./Build/Windows32/
 zip -r ./GH-Pages/Windows64.zip ./Build/Windows64/
