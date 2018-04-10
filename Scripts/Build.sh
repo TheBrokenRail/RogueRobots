@@ -41,6 +41,6 @@ echo "Building $PROJECT for OSX"
 ls Build
 ls Build/OSX
 echo 'Zipping Builds'
-zip -r ./GH-Pages/Windows32.zip ./Build/Windows32/
-zip -r ./GH-Pages/Windows64.zip ./Build/Windows64/
-zip -r ./GH-Pages/OSX.zip ./Build/OSX/
+zip -r ./GH-Pages/Windows32.zip $(pwd)/Build/Windows32/
+zip -r ./GH-Pages/Windows64.zip $(pwd)/Build/Windows64/
+zip -r ./GH-Pages/OSX.zip $(pwd)/Build/OSX/
