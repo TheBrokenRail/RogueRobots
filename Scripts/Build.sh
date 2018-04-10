@@ -49,7 +49,12 @@ echo "Building $PROJECT for Linux"
   -quit
 
 echo 'Zipping Builds'
-zip -r ./GH-Pages/Windows32.zip ./Build/Windows32/*
-zip -r ./GH-Pages/Windows64.zip ./Build/Windows64/*
-zip -r ./GH-Pages/OSX.zip ./Build/OSX/*
-zip -r ./GH-Pages/Linux.zip ./Build/Linux/*
+cd Build/Windows32
+zip -r ../../GH-Pages/Windows32.zip ./*
+cd ../Windows64
+zip -r ../../GH-Pages/Windows64.zip ./*
+cd ../OSX
+zip -r ../../GH-Pages/OSX.zip ./*
+cd ../Linux
+zip -r ../../GH-Pages/Linux.zip ./*
+cd ../../
