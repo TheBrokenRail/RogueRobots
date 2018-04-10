@@ -6,6 +6,7 @@ mkdir Build
 mkdir Build/Windows32
 mkdir Build/Windows64
 mkdir Build/OSX
+mkdir Build/Linux
 mkdir GH-Pages
 
 echo "Building $PROJECT for Windows 32bit"
@@ -38,9 +39,18 @@ echo "Building $PROJECT for OSX"
   -buildOSXUniversalPlayer "$(pwd)/Build/OSX/$PROJECT.app" \
   -quit
 
-ls Build
-ls Build/OSX
+echo "Building $PROJECT for Linux"
+/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+  -batchmode \
+  -nographics \
+  -silent-crashes \
+  -logFile /dev/stdout \
+  -projectPath $(pwd) \
+  -buildLinuxUniversalPlayer "$(pwd)/Build/Linux/$PROJECT" \
+  -quit
+
 echo 'Zipping Builds'
-zip -r ./GH-Pages/Windows32.zip $(pwd)/Build/Windows32/
-zip -r ./GH-Pages/Windows64.zip $(pwd)/Build/Windows64/
-zip -r ./GH-Pages/OSX.zip $(pwd)/Build/OSX/
+zip -r ./GH-Pages/Windows32.zip ./Build/Windows32/*
+zip -r ./GH-Pages/Windows64.zip ./Build/Windows64/*
+zip -r ./GH-Pages/OSX.zip ./Build/OSX/*
+zip -r ./GH-Pages/Linux.zip ./Build/Linux/*
