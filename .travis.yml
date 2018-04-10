@@ -4,10 +4,14 @@ install:
   - chmod +x ./Scripts/Install.sh
   - chmod +x ./Scripts/Build.sh
   - ./Scripts/Install.sh
-  - travis_wait 30
 script:
   - ./Scripts/Build.sh
-  - ls Build/Windows32
-  - ls Build/Windows64
 on_failure:
   - cat Unity.log
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: Build
+  on:
+    branch: master
