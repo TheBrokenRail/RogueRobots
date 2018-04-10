@@ -28,14 +28,14 @@ echo "Building $PROJECT for Windows 64bit"
   -buildWindows64Player "$(pwd)/Build/Windows64/$PROJECT.exe" \
   -quit
 
-echo "Building $PROJECT for OSX 64bit"
+echo "Building $PROJECT for OSX"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
   -nographics \
   -silent-crashes \
   -logFile /dev/stdout \
   -projectPath $(pwd) \
-  -buildOSX64Player "$(pwd)/Build/OSX/$PROJECT" \
+  -buildOSXUniversalPlayer "$(pwd)/Build/OSX/$PROJECT.app" \
   -quit
 
 ls Build
