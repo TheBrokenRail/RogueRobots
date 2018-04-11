@@ -36,7 +36,7 @@ public class Door : MonoBehaviour {
 		if (open && angle < 90) {
 			float diff = Time.deltaTime * 200;
 			if (diff + angle > 90) {
-				diff = diff + angle - 90;
+				diff = 90 - angle;
 			}
 			transform.RotateAround (pivotPoint.position, Vector3.up, diff);
 			angle = angle + diff;
@@ -44,7 +44,7 @@ public class Door : MonoBehaviour {
 		if (!open && angle > 0) {
 			float diff = Time.deltaTime * 200;
 			if (angle - diff < 0) {
-				diff = (angle - diff) * -1;
+				diff = angle;
 			}
 			transform.RotateAround (pivotPoint.position, Vector3.up, -diff);
 			angle = angle - diff;
