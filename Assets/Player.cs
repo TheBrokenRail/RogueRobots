@@ -29,14 +29,10 @@ namespace RogueRobots {
 		private int spareParts = 0;
 		private float range = 100;
 		private int playerMask;
-		private Animator animator;
-		private FirstPersonController firstPersonController;
 
 		// Use this for initialization
 		void Start () {
-			firstPersonController = GetComponent<FirstPersonController> ();
 			firstPersonCamera = GetComponentInChildren<Camera> ();
-			animator = GetComponentInChildren<Animator> ();
 			Debug.Log (firstPersonCamera);
 			controller = GetComponent<CharacterController>();
 			health = 20;
@@ -139,14 +135,6 @@ namespace RogueRobots {
 						table.Select ();
 					}
 				}
-			}
-			UpdateAnimator ();
-		}
-
-		void UpdateAnimator() {
-			animator.SetBool("OnGround", controller.isGrounded);
-			if (!controller.isGrounded) {
-				animator.SetFloat("Jump", controller.velocity.y);
 			}
 		}
 
